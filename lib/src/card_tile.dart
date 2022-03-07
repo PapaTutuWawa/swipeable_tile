@@ -9,20 +9,20 @@ class CardTile extends StatelessWidget {
   final SwipeDirection direction;
   final Widget background;
   final EdgeInsetsGeometry padding;
-  final BoxShadow shadow;
+  final BoxShadow? shadow;
   final double borderRadius;
   final Color? color;
 
   const CardTile({
     Key? key,
     this.color,
+    this.shadow,
     required this.moveAnimation,
     required this.controller,
     required this.child,
     required this.background,
     required this.direction,
     required this.padding,
-    required this.shadow,
     required this.borderRadius,
   }) : super(key: key);
 
@@ -49,7 +49,7 @@ class CardTile extends StatelessWidget {
               decoration: BoxDecoration(
                 color: color,
                 borderRadius: BorderRadius.circular(borderRadius),
-                boxShadow: <BoxShadow>[shadow],
+                boxShadow: shadow != null ? <BoxShadow>[shadow!] : [],
               ),
               child: child,
             ),

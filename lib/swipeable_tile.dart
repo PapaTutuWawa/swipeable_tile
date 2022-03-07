@@ -9,7 +9,7 @@ class SwipeableTile extends StatelessWidget {
   final double horizontalPadding;
   final double verticalPadding;
   final bool isCard;
-  final BoxShadow shadow;
+  final BoxShadow? shadow;
   final double borderRadius;
   final Color? color;
 
@@ -76,11 +76,12 @@ class SwipeableTile extends StatelessWidget {
     this.movementDuration = const Duration(milliseconds: 200),
     this.behavior = HitTestBehavior.opaque,
     this.isEelevated = true,
+    bool showShadow = true
   })  : isCard = false,
         swipeToTigger = false,
         horizontalPadding = 0,
         verticalPadding = 1,
-        shadow = const BoxShadow(color: Colors.black),
+        shadow = showShadow ? const BoxShadow(color: Colors.black) : null,
         assert(swipeThreshold > 0.0 && swipeThreshold < 1.0),
         super(key: key);
 
@@ -139,6 +140,7 @@ class SwipeableTile extends StatelessWidget {
     this.movementDuration = const Duration(milliseconds: 200),
     this.behavior = HitTestBehavior.opaque,
     this.isEelevated = true,
+    bool showShadow = true
   })  : isCard = false,
         horizontalPadding = 0,
         verticalPadding = 1,
@@ -146,7 +148,7 @@ class SwipeableTile extends StatelessWidget {
         // onSwiped = null,
         resizeDuration = null,
         swipeToTigger = true,
-        shadow = const BoxShadow(color: Colors.black),
+        shadow = showShadow ? const BoxShadow(color: Colors.black) : null,
         assert(swipeThreshold > 0.0 && swipeThreshold <= 0.5),
         super(key: key);
 

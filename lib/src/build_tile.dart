@@ -22,7 +22,7 @@ enum _FlingGestureKind { none, forward, reverse }
 
 class BuildTile extends StatefulWidget {
   final bool isCard;
-  final BoxShadow shadow;
+  final BoxShadow? shadow;
   final double borderRadius;
   final Color? color;
   final HitTestBehavior behavior;
@@ -41,6 +41,7 @@ class BuildTile extends StatefulWidget {
   const BuildTile({
     Key? key,
     this.color,
+    this.shadow,
     required this.child,
     required this.backgroundBuilder,
     required this.swipeThreshold,
@@ -53,7 +54,6 @@ class BuildTile extends StatefulWidget {
     required this.behavior,
     required this.padding,
     required this.isCard,
-    required this.shadow,
     required this.swipeToTigger,
     required this.isEelevated,
   }) : super(key: key);
@@ -373,7 +373,7 @@ class _BuildTileState extends State<BuildTile>
     final SwipeDirection direction = widget.direction;
     final EdgeInsetsGeometry padding = widget.padding;
     final bool isCard = widget.isCard;
-    final BoxShadow shadow = widget.shadow;
+    final BoxShadow? shadow = widget.shadow;
     final double borderRadius = widget.borderRadius;
     final Color? color = widget.color;
     final bool isEelevated = widget.isEelevated;
