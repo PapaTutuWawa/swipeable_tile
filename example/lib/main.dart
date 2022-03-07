@@ -225,7 +225,7 @@ class _ChatReplyScreenState extends State<ChatReplyScreen> {
           Expanded(
             child: ListView(children: <Widget>[
               ...persons.map(
-                (Person person) => SwipeableTile.swipeToTigger(
+                (Person person) => SwipeableTile.swipeToTrigger(
                   behavior: HitTestBehavior.translucent,
                   isEelevated: false,
                   color: Colors.white,

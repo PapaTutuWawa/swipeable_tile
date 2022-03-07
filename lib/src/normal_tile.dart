@@ -9,19 +9,19 @@ class NormalTile extends StatelessWidget {
   final Widget background;
   final EdgeInsetsGeometry padding;
   final double borderRadius;
-  final Color color;
+  final Color? color;
   final bool isEelevated;
 
   const NormalTile({
     Key? key,
+    this.color,
     required this.moveAnimation,
     required this.controller,
     required this.child,
     required this.background,
     required this.direction,
     required this.padding,
-    required this.borderRadius,
-    required this.color,
+    required this.borderRadius, 
     required this.isEelevated,
   }) : super(key: key);
 
